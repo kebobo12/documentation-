@@ -7,31 +7,37 @@ Admin Panel Documentation - Generated 2026-02-04
 ## Developer Documentation
 
 ### Overview
-- [Discovery Report](dev/_discovery.md) - Codebase scan results and module map ✅
-- [Architecture Overview](dev/architecture.md) - System design, request lifecycle, integration points ✅
+- [Discovery Report](dev/_discovery.md) - Codebase scan results and module map
+- [Architecture Overview](dev/architecture.md) - System design, request lifecycle, integration points
 
 ### Data Layer
-- [Models Reference](dev/models.md) - All 86 models with relationships and key methods ✅
-- [Database Schema](dev/database-schema.md) - Table definitions from migrations ✅
+- [Models Reference](dev/models.md) - All 86 models with relationships and key methods
+- [Database Schema](dev/database-schema.md) - Table definitions from migrations
 
 ### API
-- [API Endpoints](dev/api-endpoints.md) - All 34 API endpoints by domain ✅
+- [API Endpoints](dev/api-endpoints.md) - All 34 API endpoints by domain
 
 ### Module Documentation
-- [Wallet Module](dev/modules/wallet.md) - Entity management, game providers, transactions ✅
-- [Gameserver Module](dev/modules/gameserver.md) - Sessions, rounds, lobbies, multiplayer ✅
-- [Admin Module](dev/modules/admin.md) - Users, roles, audit logging ✅
-- [Shared Module](dev/modules/shared.md) - Infrastructure, deployment, monitoring ✅
+- [Wallet Module](dev/modules/wallet.md) - Entity management, game providers, transactions
+- [Gameserver Module](dev/modules/gameserver.md) - Sessions, rounds, lobbies, multiplayer
+- [Admin Module](dev/modules/admin.md) - Users, roles, audit logging
+- [Shared Module](dev/modules/shared.md) - Infrastructure, deployment, monitoring
 
 ---
 
 ## User Documentation
 
 ### Getting Started
-- [Getting Started Guide](user/getting-started.md) - Login, navigation, first steps ✅
+- [Getting Started Guide](user/getting-started.md) - Login, navigation, first steps
 
 ### Feature Guides
-- [Entity Management](user/features/entities.md) - Manage casino operator clients ✅
+- [Entity Management](user/features/entities.md) - Manage casino operator clients
+- [Game Management](user/features/games.md) - Game catalog and configuration
+- [Game Providers](user/features/game-providers.md) - Provider settings and overrides
+- [Transactions](user/features/transactions.md) - Transaction history and search
+- [Error Logs](user/features/error-logs.md) - Monitor and acknowledge errors
+- [Users & Roles](user/features/users-roles.md) - Admin user and role management
+- [Lobbies](user/features/lobbies.md) - Game lobby organization
 
 ---
 
@@ -47,15 +53,15 @@ Admin Panel Documentation - Generated 2026-02-04
 | Static Analysis | PHPStan Level 6 |
 | Testing | PHPUnit 9 |
 
-### Domain Summary
-| Domain | Models | Controllers | Routes | Purpose |
-|--------|--------|-------------|--------|---------|
-| Wallet | 22 | 33 | 240 | Financial operations |
-| Gameserver | 41 | 21 | 116 | Game management |
-| Admin | 9 | 13 | 55 | System administration |
-| Shared | - | 10 | 33 | Infrastructure |
-| Sandbox | 6 | 6 | 20 | Testing |
-| Backoffice | 4 | 2 | 12 | Operator portal |
+### Main Sections
+| Section | Purpose |
+|---------|---------|
+| **Wallet** | Entities, games, transactions, game providers |
+| **Gameserver** | Sessions, rounds, lobbies, multiplayer |
+| **Admin** | Users, roles, permissions, audit logs |
+| **Backoffice** | Operator user management |
+| **Shared** | Servers, deployment, monitoring |
+| **Sandbox** | Testing environment |
 
 ### Key Commands
 ```bash
@@ -64,39 +70,41 @@ vendor/bin/phpstan analyze
 
 # Testing
 vendor/bin/phpunit
-vendor/bin/phpunit --filter=TestName
 
 # Frontend
 bash tailwind_watch.sh
 ```
 
-### Database Connections
-| Connection | Purpose |
-|------------|---------|
-| admin-master | Admin operations |
-| wallet-master/slave | Wallet system |
-| gameserver-master/slave | Game data |
-| data-aggregation-* | Analytics |
-| wallet-archive-* | Archived data |
+---
+
+## Documentation Files
+
+```
+docs/
+├── INDEX.md                          (this file)
+├── dev/
+│   ├── _discovery.md                 Discovery scan results
+│   ├── architecture.md               System architecture
+│   ├── models.md                     Model reference
+│   ├── database-schema.md            Database tables
+│   ├── api-endpoints.md              API documentation
+│   └── modules/
+│       ├── wallet.md                 Wallet module
+│       ├── gameserver.md             Gameserver module
+│       ├── admin.md                  Admin module
+│       └── shared.md                 Shared module
+└── user/
+    ├── getting-started.md            Getting started guide
+    └── features/
+        ├── entities.md               Entity management
+        ├── games.md                  Game management
+        ├── game-providers.md         Game providers
+        ├── transactions.md           Transactions
+        ├── error-logs.md             Error logs
+        ├── users-roles.md            Users & roles
+        └── lobbies.md                Lobby management
+```
 
 ---
 
-## Documentation Status
-
-| Document | Status |
-|----------|--------|
-| Discovery Report | ✅ Complete |
-| Architecture Overview | ✅ Complete |
-| Models Reference | ✅ Complete |
-| Database Schema | ✅ Complete |
-| API Endpoints | ✅ Complete |
-| Wallet Module | ✅ Complete |
-| Gameserver Module | ✅ Complete |
-| Admin Module | ✅ Complete |
-| Shared Module | ✅ Complete |
-| Getting Started | ✅ Complete |
-| Entity Management | ✅ Complete |
-
----
-
-*Generated by Documentarian skill*
+*Generated by Documentarian workflow*
